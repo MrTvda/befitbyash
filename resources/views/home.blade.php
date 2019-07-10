@@ -8,13 +8,16 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                  <table class="table">
+                    <tr>
+                      <td>Blog</td>
+                      <td><a href="{{route('blog')}}" class="btn btn-primary">View</td>
+                    </tr>
+                    <tr>
+                      <td>Users</td>
+                      <td><a href="{{route('users')}}" class="btn btn-primary">View</td>
+                    </tr>
+                  </table>
                 </div>
             </div>
         </div>

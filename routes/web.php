@@ -11,13 +11,18 @@
 |
 */
 
-Route::get('/blog', 'Controller@blog');
+Route::get('/blog', 'Controller@blog')->name('blog')->middleware(['auth','admin']);
 Route::get('/blogs', 'Controller@index');
+
 Route::get('/', function() {
   return view('index');
 });
-Route::post('/addblog', 'Controller@addBlog')->name('addBlog');
-Route::get('/removeBlog/{id}', 'Controller@removeBlog')->name('removeBlog');
+
+Route::get('/users', 'Controller@userPage')->name('users')->middleware(['auth', 'admin']);
+Route::post('/addblog', 'Controller@addBlog')->name('addBlog')->middleware(['auth','admin']);
+Route::get('/removeBlog/{id}', 'Controller@removeBlog')->name('removeBlog')->middleware(['auth','admin']);
+
+Route::get('/changeUserRole/{email}', 'Controller@changeUserRole')->name('changeUserRole')->middleware(['auth','admin']);
 
 Auth::routes();
 

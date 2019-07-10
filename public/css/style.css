@@ -62,7 +62,7 @@ p:last-child {
 }
 
 .sidebar ul li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .sidebar ul li:last-child {
@@ -75,6 +75,11 @@ p:last-child {
   padding: 10px 40px;
   background-color: #e7e7e7;
   display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #555;
+  color: white;
 }
 
 .banner {

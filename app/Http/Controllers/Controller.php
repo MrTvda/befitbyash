@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\Blog;
+use App\User;
 use DB;
 
 class Controller extends BaseController
@@ -41,6 +42,27 @@ class Controller extends BaseController
 
     public function removeBlog($id) {
       DB::table('blog')->where('id', $id)->delete();
+      return redirect()->back();
+    }
+
+    public function userPage() {
+      $user = User::all();
+      return view('users', compact('user'));
+    }
+
+    public function changeUserRole($email) {
+      $user = DB::table('users')->where('email', $email)->get()->first();
+
+      if (($user -> user_role) == 'Admin') {
+        User::where('email', $email)->update([
+          'user_role' => 'User',
+        ]);
+      } else {
+        User::where('email', $email)->update([
+          'user_role' => 'Admin',
+        ]);
+      }
+      
       return redirect()->back();
     }
 
