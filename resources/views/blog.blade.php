@@ -32,10 +32,12 @@
                   </form>
 
                   <h1>Blogs</h1>
+                  <hr>
                   @foreach ($blog as $blog)
                     <h2>{{$blog -> name}}</h2>
                     <p>{!!$blog -> blog!!}</p>
                     <a href="{{route('removeBlog', $blog -> id)}}"><button class="btn btn-danger">Delete</button></a>
+                    <hr>
                   @endforeach
                 </div>
             </div>
