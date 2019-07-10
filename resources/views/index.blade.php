@@ -9,7 +9,6 @@
 </head>
 <body>
   <header>
-    <div class="banner"></div>
     <div class="navbar">
       <ul>
         <li><a href="/">Home</a></li>
