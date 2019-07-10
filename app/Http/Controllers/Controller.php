@@ -17,7 +17,7 @@ class Controller extends BaseController
     public function index() {
       $blog = Blog::all()->sortByDesc('id');
 
-      return view('index', compact('blog'));
+      return view('blogs', compact('blog'));
     }
 
     public function blog() {

@@ -12,7 +12,10 @@
 */
 
 Route::get('/blog', 'Controller@blog');
-Route::get('/', 'Controller@index');
+Route::get('/blogs', 'Controller@index');
+Route::get('/', function() {
+  return view('index');
+});
 Route::post('/addblog', 'Controller@addBlog')->name('addBlog');
 Route::get('/removeBlog/{id}', 'Controller@removeBlog')->name('removeBlog');
 
