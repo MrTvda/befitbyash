@@ -18,7 +18,7 @@
     </div>
   </header>
   <main>
-    <img class="foto-home" src="/img/logo.jpg" alt="Foto van ashley">
+    <img class="foto-home" src="/img/logo-min.png" alt="Foto van ashley">
     <div class="wide-main dark">
       <div class="wide-main-container">
         <p>Mijn naam is Ashley van den Berg en oprichtster van Be fit by Ash. Mijn liefde voor sport zit er van jongs af aan al in. Tijdens mijn 4 jarige opleiding aan het CIOS heb ik mij verdiept in het menselijk lichaam, personal training, fitness en voeding.</p>

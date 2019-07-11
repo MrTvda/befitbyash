@@ -20,7 +20,7 @@
   <main class="main-blog">
     <div class="wrapper">
       <div class="sidebar">
-        <img id="foto-sidebar" src="/img/logo.jpg" alt="Logo">
+        <img id="foto-sidebar" src="/img/logo-min.png" alt="Logo">
         <aside>
           <ul>
             @foreach ($blog as $blog1)
