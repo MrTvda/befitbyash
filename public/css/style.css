@@ -10,9 +10,8 @@
 }
 
 body {
-  background-color: var(--achtergrond);
+  background-color: var(--achtergrond) !important;
   font-family: helvetica, sans-serif;
-  overflow-x: hidden;
 }
 
 main,
@@ -21,11 +20,16 @@ main,
   margin: 0 auto;
   background-color: #fff;
   padding: 40px;
+  z-index: -1;
 }
 
 .wide-main-container {
   background-color: transparent;
   padding: 10px 20px;
+}
+
+header {
+  z-index: 2;
 }
 
 .main-blog {
@@ -134,6 +138,8 @@ p:last-child {
 .navbar {
   height: 40px;
   background-color: #555;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 .navbar ul {
@@ -163,6 +169,7 @@ p:last-child {
   background-color: #fff;
   padding: 20px;
   margin: 0 calc(-25vw + 25%);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .wide-main-container {
@@ -206,4 +213,12 @@ p:last-child {
   width: 75%;
   margin: 20px auto;
   display: block;
+}
+
+.wide-main-list {
+  margin: 0 0 20px 30px;
+}
+
+.wide-main-list:last-child {
+  margin: 0 0 0 30px;
 }

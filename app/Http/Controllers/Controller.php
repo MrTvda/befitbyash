@@ -21,6 +21,12 @@ class Controller extends BaseController
       return view('blogs', compact('blog'));
     }
 
+    public function index2() {
+      $blog = Blog::all()->sortByDesc('id');
+
+      return view('blogs2', compact('blog'));
+    }
+
     public function blog() {
       $blog = Blog::all();
 
@@ -62,7 +68,7 @@ class Controller extends BaseController
           'user_role' => 'Admin',
         ]);
       }
-      
+
       return redirect()->back();
     }
 

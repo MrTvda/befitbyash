@@ -13,6 +13,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/blogs">Blog</a></li>
+        <li><a href="/tarieven">Tarieven</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
