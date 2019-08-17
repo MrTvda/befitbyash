@@ -8,7 +8,7 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <title>Be fit by ash - Blogs</title>
 </head>
-<body class="body-befitbyash"  style="background-color: #cfdcd3 !important">
+<body style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="background-color: #cfdcd3">
     <a class="navbar-brand" href="#">Be fit By Ash</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,16 +33,17 @@
   </nav>
   <main>
     <div class="container">
-      <div id="list-blog" class="col-3 float-left mt-3 sticky-top">
+      <div id="list-blog" class="col-md-3 float-left mt-3 sticky-top">
         <div class="list-group">
+          <img src="/img/logo.png" alt="logo" class="pb-2 center" style="width: 75%; height: auto; margin: 0 auto;">
           @foreach ($blog as $blog1)
             <a class="list-group-item list-group-item-action" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>
           @endforeach
         </div>
       </div>
-      <div data-spy="scroll" data-target="#list-blog" data-offset="10" class="scrollspy">
+      <div data-spy="scroll" data-target="#list-blog" data-offset="0" class="scrollspy">
         @foreach ($blog as $blog)
-        <div id="{{$blog -> name}}" class="col-9 float-right mt-3 ">
+        <div id="{{$blog -> name}}" class="col-md-9 float-right mt-3 ">
           <div class="card">
             <div class="card-header">
               <h4 class="mt-1">{{$blog -> name}}</h4>
