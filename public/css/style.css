@@ -3,7 +3,13 @@
   --grijs: #dcdddf;
 }
 
-* {
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -44,6 +50,7 @@ p {
 
 p:last-child {
   margin: 0;
+  font
 }
 
 .sidebar {
@@ -221,4 +228,4 @@ p:last-child {
 
 .wide-main-list:last-child {
   margin: 0 0 0 30px;
-}
+} */
