@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
-class CheckIfAdmin
-{
+
+class CheckIfAdmin {
     /**
      * Handle an incoming request.
      *
@@ -15,7 +15,8 @@ class CheckIfAdmin
      */
     public function handle($request, Closure $next)
     {
-      // Controlleren of gebruiker admin is
+
+       // Controlleren of gebruiker admin is
        if(Auth::user()->user_role == "Admin") {
          // Doorverwijzen naar gevraagde pagina
          return $next($request);

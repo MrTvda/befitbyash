@@ -21,6 +21,10 @@ Route::get('/', function() {
   return view('index');
 });
 
+// Route::get('/', function() {
+//   return view('work-in-progress');
+// });
+
 Route::get('/users', 'Controller@userPage')->name('users')->middleware(['auth', 'admin']);
 Route::post('/addblog', 'Controller@addBlog')->name('addBlog')->middleware(['auth','admin']);
 Route::get('/removeBlog/{id}', 'Controller@removeBlog')->name('removeBlog')->middleware(['auth','admin']);
