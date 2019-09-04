@@ -30,7 +30,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav" style="font-size: 1.2em;">
-      <li class="nav-item pr-4 pl-4 active">
+      <li class="nav-item pr-4 pl-4">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item pr-4 pl-4">
@@ -39,7 +39,7 @@
       <li class="nav-item pr-4 pl-4">
         <a class="nav-link" href="/tarieven">Tarieven</a>
       </li>
-      <li class="nav-item pr-4 pl-4 ">
+      <li class="nav-item pr-4 pl-4 active">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
     </ul>
@@ -47,20 +47,42 @@
 </nav>
 <main>
   <div class="container">
-    <img class="py-3 col-md-5 w-75 px-0" src="/img/logo-min.png" alt="Foto van ashley" width="40%" style="margin: 0 auto; display: block">
     <div class="card border-0 shadow">
       <div class="card-header bg-dark text-white">
-        <h2 class="my-0">Home</h2>
+        <h2 class="my-0">Contact</h2>
       </div>
       <div class="card-body">
-        <div class="col-md-6 float-left my-3">
-          <p>Mijn naam is Ashley van den Berg en oprichtster van Be fit by Ash. Mijn liefde voor sport zit er van jongs af aan al in. Tijdens mijn 4 jarige opleiding aan het CIOS heb ik mij verdiept in het menselijk lichaam, personal training, fitness en voeding.</p>
-          <p>Momenteel ben ik werkzaam bij een kinderopvang waar ik met veel plezier sportles geef! De andere dagen ben ik te vinden bij Doe fysiotherapie in Nieuw-Vennep. Hier mag ik het uiterste uit mensen halen. Er word hard getraind, maar ook is er altijd tijd voor een praatje!</p>
-          <p>Be fit by Ash coacht mensen naar een gezonder leefstijl! Succesvol afvallen bereik je vooral met de juiste mindset en een plan die past bij jou. Ga voor de beste versie van jezelf en zet jezelf is op de 1e plaats. Eis geen perfectie en geef jezelf de tijd!</p>
-          <p>Lekker eten? Normaal eten? Veel eten? Af en toe snoepen? En vooral blijven genieten van eten? JA DAT KAN!!</p>
+        <div class="col-md-7 float-left my-3">
+          <form class="" action="index.html" method="post">
+            <div class="form-group row">
+              <label for="Naam" class="col-sm-3 col-form-label">Naam</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" name="Naam" id="Naam" placeholder="Naam">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="Email">Email</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="email" name="Email" id="Email" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label" for="Onderwerp">Onderwerp</label>
+              <div class="col-sm-9">
+                <input class="form-control" type="email" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-label-form" for="Bericht">Bericht</label>
+              <div class="col-sm-9">
+                <textarea class="form-control" id="Bericht" name="Bericht" placeholder="Bericht" rows="8" cols="80"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary"type="button" name="button">Verzenden</button>
+          </form>
         </div>
-        <div class="col-md-6 float-right my-3">
-          <img class="w-100 rounded shadow" src="/img/foto-ashley.jpg">
+        <div class="col-md-5 float-right my-3">
+          <img class="w-100 shadow rounded" src="img/foto-ashley.jpg" alt="">
         </div>
       </div>
     </div>

@@ -20,6 +20,9 @@ Route::get('/tarieven', function() {
 Route::get('/', function() {
   return view('index');
 });
+Route::get('/contact', function() {
+  return view('contact');
+});
 
 // Route::get('/', function() {
 //   return view('work-in-progress');

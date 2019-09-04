@@ -40,7 +40,7 @@
           <a class="nav-link" href="/tarieven">Tarieven</a>
         </li>
         <li class="nav-item pr-4 pl-4 ">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
       </ul>
     </div>

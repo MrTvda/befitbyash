@@ -39,43 +39,46 @@
         <a class="nav-link" href="/tarieven">Tarieven</a>
       </li>
       <li class="nav-item pr-4 pl-4 ">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="/contact">Contact</a>
       </li>
     </ul>
   </div>
 </nav>
   <main>
     <div class="container">
-      <img class="rounded border-0 px-0 mx-auto mb-3 d-block shadow col-md-5 img-responsive" src="/img/foto-ashley.jpg" alt="">
-      <div class="card border-0">
-        <div class="card-body bg-dark text-white rounded border-0">
-          <p>Be fit by Ash is aangesloten bij de BGN. De BGN-gewichtsconsulent wordt door een groot aantal verzekeraars vergoed vanuit de aanvullende zorgverzekering. Een BGN-gewichtsconsulent is in het bezit van een geldig diploma en volgt regelmatig bij en nascholingen om op de hoogte te blijven van de ontwikkelingen in het vakgebied!</p>
-          <div class="wide-main dark">
-            <div class="wide-main-container">
-              <p>
-                DOE 6 weeks to shred<br>
-                Dit programma is in samenwerking met DOE fysiotherapie en duurt 6 weken.
-              </p>
-              <ul class="wide-main-list">
-                <li>Intake</li>
-                <li>Voedingsanalyse</li>
-                <li>Op maat gemaakte schema's</li>
-                <li>Tips en recepten</li>
-                <li>Meten en wegen</li>
-                <li>2x per week sportbegeleiding</li>
-                <li>&euro;200,00 inc.</li>
-              </ul>
-              <p>Pakket van een intakegesprek en 12 vervolgconsulten</p>
-              <ul class="wide-main-list">
-                <li>Voedingsanalyse</li>
-                <li>Op maat gemaakte schema's</li>
-                <li>Tips en recepten</li>
-                <li>Meten en wegen</li>
-                <li>&euro;250,00 inc.</li>
-              </ul>
-            </div>
+      <div class="card border-0 shadow">
+        <div class="card-header bg-dark text-white">
+          <h2 class="my-0">Tarieven</h2>
+        </div>
+        <div class="card-body rounded">
+          <div class="col-md-6 my-3 float-left">
+            <img class="rounded shadow w-100" src="/img/foto-ashley.jpg" alt="">
           </div>
-          <p class="mb-0">Online coaching traject van 12 weken. In dit programma leer je wat gezond en bewust eten is. Tijdens mijn mails leer je over voeding, wat je op sommige momenten het beste kan eten en waarom, wat is nou gezond en veel lekkere recepten! Nu voor maar &euro;150 inc.!</p>
+          <div class="col-md-6 my-3 mx-0 float-right">
+            <p>Be fit by Ash is aangesloten bij de BGN. De BGN-gewichtsconsulent wordt door een groot aantal verzekeraars vergoed vanuit de aanvullende zorgverzekering. Een BGN-gewichtsconsulent is in het bezit van een geldig diploma en volgt regelmatig bij en nascholingen om op de hoogte te blijven van de ontwikkelingen in het vakgebied!</p>
+            <p>
+              DOE 6 weeks to shred<br>
+              Dit programma is in samenwerking met DOE fysiotherapie en duurt 6 weken.
+            </p>
+            <ul>
+              <li>Intake</li>
+              <li>Voedingsanalyse</li>
+              <li>Op maat gemaakte schema's</li>
+              <li>Tips en recepten</li>
+              <li>Meten en wegen</li>
+              <li>2x per week sportbegeleiding</li>
+              <li>&euro;200,00 inc.</li>
+            </ul>
+            <p>Pakket van een intakegesprek en 12 vervolgconsulten</p>
+            <ul>
+              <li>Voedingsanalyse</li>
+              <li>Op maat gemaakte schema's</li>
+              <li>Tips en recepten</li>
+              <li>Meten en wegen</li>
+              <li>&euro;250,00 inc.</li>
+            </ul>
+            <p class="mb-0">Online coaching traject van 12 weken. In dit programma leer je wat gezond en bewust eten is. Tijdens mijn mails leer je over voeding, wat je op sommige momenten het beste kan eten en waarom, wat is nou gezond en veel lekkere recepten! Nu voor maar &euro;150 inc.!</p>
+          </div>
         </div>
       </div>
     </div>
