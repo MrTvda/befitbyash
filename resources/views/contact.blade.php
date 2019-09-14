@@ -53,7 +53,7 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form class="" action="index.html" method="post">
+          <form class="" action="contact-formulier-handler.php" method="post">
             <div class="form-group row">
               <label for="Naam" class="col-sm-3 col-form-label">Naam</label>
               <div class="col-sm-9">
@@ -78,7 +78,7 @@
                 <textarea class="form-control" id="Bericht" name="Bericht" placeholder="Bericht" rows="8" cols="80"></textarea>
               </div>
             </div>
-            <button class="btn btn-primary"type="button" name="button">Verzenden</button>
+            <button class="btn btn-primary"type="button" name="Button">Verzenden</button>
           </form>
         </div>
         <div class="col-md-5 float-right my-3">

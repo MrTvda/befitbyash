@@ -22,7 +22,7 @@ Route::get('/', function() {
 });
 Route::get('/contact', function() {
   return view('contact');
-});
+})->name('contact');
 
 // Route::get('/', function() {
 //   return view('work-in-progress');
