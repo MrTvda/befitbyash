@@ -46,9 +46,9 @@
     </div>
   </nav>
   <main role="main" class="container">
-    <div id="list-blog" class="col-md-3 float-left mb-5">
+    <div id="list-blog" class="col-md-3 float-left mb-2">
       <img src="/img/logo.png" alt="logo" class="px-0 d-block mx-auto w-75 mb-4 mt-2">
-      <ul class = "list-group shadow">
+      <ul class="list-group shadow d-none d-md-block">
         <h2 class="list-group-item bg-dark text-white">Blogs</h2>
         @foreach ($blog as $blog1)
           <a class="list-group-item list-group-item-action bg-dark text-white" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>

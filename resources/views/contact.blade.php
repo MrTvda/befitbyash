@@ -7,6 +7,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Be fit By Ash</title>
 </head>
 @guest
@@ -53,32 +54,32 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form class="" action="contact-form-handler.php" method="post">
+          <form action="contact-form-handler.php" method="post">
             <div class="form-group row">
-              <label for="Naam" class="col-sm-3 col-form-label">Naam</label>
-              <div class="col-sm-9">
+              <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
+              <div class="col-sm-8">
                 <input type="email" class="form-control" name="Naam" id="Naam" placeholder="Naam">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" for="Email">Email</label>
-              <div class="col-sm-9">
+              <label class="col-sm-4 col-form-label" for="Email">Email</label>
+              <div class="col-sm-8">
                 <input class="form-control" type="email" name="Email" id="Email" placeholder="Email">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 col-form-label" for="Onderwerp">Onderwerp</label>
-              <div class="col-sm-9">
+              <label class="col-sm-4 col-form-label" for="Onderwerp">Onderwerp</label>
+              <div class="col-sm-8">
                 <input class="form-control" type="email" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-3 col-label-form" for="Bericht">Bericht</label>
-              <div class="col-sm-9">
+              <label class="col-sm-4 col-label-form" for="Bericht">Bericht</label>
+              <div class="col-sm-8">
                 <textarea class="form-control" id="Bericht" name="Bericht" placeholder="Bericht" rows="8" cols="80"></textarea>
+                <button class="btn btn-primary mt-3" type="button" name="Button">Verzenden</button>
               </div>
             </div>
-            <button class="btn btn-primary"type="button" name="Button">Verzenden</button>
           </form>
         </div>
         <div class="col-md-5 float-right my-3">
