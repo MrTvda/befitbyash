@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
   <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
   <script>
@@ -21,16 +22,21 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Toevoegen blogs</div>
 
                 <div class="card-body">
                   <form action="{{route('addBlog')}}" method="post">
                     @csrf
-                    <input type="text" name="name" placeholder="Blognaam"><br>
-                    <textarea name="blog" rows="10" cols="80"></textarea><br>
-                    <input type="submit" name="submit" value="Aanmaken">
+                    <div class="form-group row mb-0">
+                      <label for="name" class="col-md-2 col-form-label">Blognaam </label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" name="name" placeholder="Blognaam"><br>
+                      </div>
+                    </div>
+                    <textarea class="form-control rounded" name="blog" rows="10" cols="80"></textarea><br>
+                    <input class="btn btn-primary mb-3" type="submit" name="submit" value="Aanmaken">
                   </form>
-
+                  <hr>
                   <h1>Blogs</h1>
                   <hr>
                   @foreach ($blog as $blog)
