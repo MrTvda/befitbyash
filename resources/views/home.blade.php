@@ -11,11 +11,11 @@
                   <table class="table">
                     <tr>
                       <td>Blog</td>
-                      <td><a href="{{route('blog')}}" class="btn btn-primary">View</td>
+                      <td><a href="{{route('blog')}}" class="btn btn-primary float-right">View</td>
                     </tr>
                     <tr>
                       <td>Users</td>
-                      <td><a href="{{route('users')}}" class="btn btn-primary">View</td>
+                      <td><a href="{{route('users')}}" class="btn btn-primary float-right" style="">View</td>
                     </tr>
                   </table>
                 </div>

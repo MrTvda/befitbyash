@@ -8,21 +8,22 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                  <table class="table">
-                    <tr>
-                      <th>Naam / Email</th>
-                      <th>Gebruikers rol</th>
-                      <th>Wijzig rol</th>
-                    </tr>
-                    @foreach($user as $user)
+                  <div class="table-responsive">
+                    <table class="table">
                       <tr>
-                        <td>{{$user -> name}} <br> {{$user -> email}}</td>
-                        <td>{{$user -> user_role}}</td>
-                        <td><a class="btn btn-primary" href="{{route('changeUserRole', $user -> email)}}">Wijzigen</a></td>
+                        <th>Naam / Email</th>
+                        <th>Rechten</th>
+                        <th>Wijzig rechten</th>
                       </tr>
-                    @endforeach
-                  </table>
-
+                      @foreach($user as $user)
+                        <tr>
+                          <td>{{$user -> name}} <br> {{$user -> email}}</td>
+                          <td><p class="text-center">{{$user -> user_role}}</p></td>
+                          <td><a class="btn btn-primary float-right" href="{{route('changeUserRole', $user -> email)}}">Wijzigen</a></td>
+                        </tr>
+                      @endforeach
+                    </table>
+                  </div>
                 </div>
             </div>
         </div>
