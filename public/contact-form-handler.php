@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 if (isset($_POST['Button'])) {
   $name = $_POST['Naam'];
@@ -12,7 +12,7 @@ if (isset($_POST['Button'])) {
 
   mail($mailTo, $subject, $txt, $headers);
 
-  header("Location: {{route('homepage')}}");
+  header("Location: {{route('contact')}}");
 }
 
 ?>
