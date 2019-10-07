@@ -54,11 +54,11 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form action="/contact-form-handler.php" method="post">
+          <form action="contact-form-handler.php" method="get">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
               <div class="col-sm-8">
-                <input type="email" class="form-control" name="Naam" id="Naam" placeholder="Naam">
+                <input type="text" class="form-control" name="Naam" id="Naam" placeholder="Naam">
               </div>
             </div>
             <div class="form-group row">
@@ -70,16 +70,16 @@
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Onderwerp">Onderwerp</label>
               <div class="col-sm-8">
-                <input class="form-control" type="email" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp">
+                <input class="form-control" type="text" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 col-label-form" for="Bericht">Bericht</label>
               <div class="col-sm-8">
                 <textarea class="form-control" id="Bericht" name="Bericht" placeholder="Bericht" rows="8" cols="80"></textarea>
-                <button class="btn btn-primary mt-3" type="button" name="Button">Verzenden</button>
               </div>
             </div>
+            <button class="btn btn-primary mt-3" type="submit" name="Button">Verzenden</button>
           </form>
         </div>
         <div class="col-md-5 float-right my-3">
