@@ -54,7 +54,7 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form action="contact-form-handler.php" method="post">
+          <form action="/contact-form-handler.php" method="post">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
               <div class="col-sm-8">

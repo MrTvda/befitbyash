@@ -12,8 +12,7 @@ if (isset($_POST['Button'])) {
 
   mail($mailTo, $subject, $txt, $headers);
 
-  header("Location: {{route('contact')}}");
+  header("Location: {{route('homepage')}}");
 }
-
 
 ?>
