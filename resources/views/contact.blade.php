@@ -54,32 +54,32 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form action="contact-form-handler.php" method="get">
+          <form action="contact-form-handler.php" method="post">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" name="Naam" id="Naam" placeholder="Naam">
+                <input type="text" class="form-control" name="name" placeholder="Naam">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Email">Email</label>
               <div class="col-sm-8">
-                <input class="form-control" type="email" name="Email" id="Email" placeholder="Email">
+                <input class="form-control" type="email" name="mail" placeholder="Email">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Onderwerp">Onderwerp</label>
               <div class="col-sm-8">
-                <input class="form-control" type="text" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp">
+                <input class="form-control" type="text" name="subject" placeholder="Onderwerp">
               </div>
             </div>
             <div class="form-group row">
               <label class="col-sm-4 col-label-form" for="Bericht">Bericht</label>
               <div class="col-sm-8">
-                <textarea class="form-control" id="Bericht" name="Bericht" placeholder="Bericht" rows="8" cols="80"></textarea>
+                <textarea class="form-control" name="message" placeholder="Bericht" rows="8" cols="80"></textarea>
               </div>
             </div>
-            <button class="btn btn-primary mt-3" type="submit" name="Button">Verzenden</button>
+            <button class="btn btn-primary mt-3" type="submit" name="submit">Verzenden</button>
           </form>
         </div>
         <div class="col-md-5 float-right my-3">

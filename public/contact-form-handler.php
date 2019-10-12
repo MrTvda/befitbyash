@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_POST['Button'])) {
-  $name = $_POST['Naam'];
-  $subject = $_POST['Onderwerp'];
-  $mailFrom = $_POST['Email'];
-  $message = $_POST['Bericht'];
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $subject = $_POST['subject'];
+  $mailFrom = $_POST['mail'];
+  $message = $_POST['message'];
 
   $mailTo = "ter-lou@live.nl";
   $headers = "From: ".$mailFrom;
@@ -12,7 +12,7 @@ if (isset($_POST['Button'])) {
 
   mail($mailTo, $subject, $txt, $headers);
 
-  header("Location: {{route('contact')}}");
+  header("Location: contact");
 }
 
 ?>
