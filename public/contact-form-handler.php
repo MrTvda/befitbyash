@@ -10,9 +10,14 @@ if (isset($_POST['submit'])) {
   $headers = "From: ".$mailFrom;
   $txt = $message;
 
-  mail($mailTo, $subject, $txt, $headers);
+  $sendmail = mail($mailTo, $subject, $txt, $headers);
 
-  header("Location: contact");
+  if ($sendmail) {
+      header("Location: contact?mailnotsend");
+  } else {
+      header("Location: contact?mailsend");
+  }
+
 }
 
 ?>

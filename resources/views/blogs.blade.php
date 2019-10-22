@@ -60,8 +60,8 @@
       <div id="{{$blog -> name}}" class="col-md-9 float-right mb-3">
         <div class="card border-0 shadow">
           <div class="card-header bg-dark text-white">
-            <h4 class="mt-1">{{$blog -> name}}</h4>
-            <p class="card-subtitle text-muted mb-0">Datum: 16/8/2019</p>
+            <h4 class="mt-1 mb-0 float-left">{{$blog -> name}}</h4>
+            <p class="card-subtitle text-muted mb-0 float-right align-middle">Datum: 16/8/2019</p>
           </div>
           <div class="card-body">
             {!!$blog -> blog!!}
