@@ -7,13 +7,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
-  <title>Be fit By Ash</title>
+  <title>Be fit by Ash</title>
 </head>
 @guest
 @if (Route::has('register'))
 <body style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-dark bg-dark shadow-lg mb-5">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
   </nav>
   <main class="container">
     <img class="w-75 mb-4"src="/img/logo.png" alt="" style="margin: 0 auto; display: block">
@@ -24,7 +24,7 @@
 @else
 <body class="mb-5" style="background-color: #cfdcd3 !important">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg mb-4">
-  <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+  <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,7 +37,7 @@
         <a class="nav-link" href="/blogs">Blogs</a>
       </li>
       <li class="nav-item pr-4 pl-4">
-        <a class="nav-link" href="/tarieven">Tarieven</a>
+        <a class="nav-link" href="/diensten">Diensten</a>
       </li>
       <li class="nav-item pr-4 pl-4 ">
         <a class="nav-link" href="/contact">Contact</a>
@@ -47,7 +47,6 @@
 </nav>
 <main>
   <div class="container">
-    <img class="py-3 col-md-5 w-75 px-0" src="/img/logo-min.png" alt="Foto van ashley" width="40%" style="margin: 0 auto; display: block">
     <div class="card border-0 shadow">
       <div class="card-header bg-dark text-white">
         <h2 class="my-0">Home</h2>

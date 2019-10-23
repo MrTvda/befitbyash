@@ -7,13 +7,13 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
-  <title>Be fit By Ash - Blogs</title>
+  <title>Be fit by Ash - Blogs</title>
 </head>
 @guest
 @if (Route::has('register'))
 <body style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-dark bg-dark shadow-lg mb-5">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
   </nav>
   <main class="container">
     <img class="w-75 mb-4"src="/img/logo.png" alt="" style="margin: 0 auto; display: block">
@@ -23,8 +23,8 @@
 @endif
 @else
 <body class="mb-5" style="background-color: #cfdcd3 !important">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg mb-4">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+  <nav class="navbar navbar-expand-md fixed-nav navbar-dark bg-dark shadow-lg mb-4">
+    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
     </button>
@@ -37,7 +37,7 @@
           <a class="nav-link" href="/blogs">Blogs</a>
         </li>
         <li class="nav-item pr-4 pl-4">
-          <a class="nav-link" href="/tarieven">Tarieven</a>
+          <a class="nav-link" href="/diensten">Diensten</a>
         </li>
         <li class="nav-item pr-4 pl-4 ">
           <a class="nav-link" href="/contact">Contact</a>
@@ -57,14 +57,14 @@
     </div>
     <div data-spy="scroll" data-target="#list-blog" data-offset="100" class="scrollspy">
       @foreach ($blog as $blog)
-      <div id="{{$blog -> name}}" class="col-md-9 float-right mb-3">
+      <div id="{{$blog -> name}}" class="col-md-9 float-right mb-4">
         <div class="card border-0 shadow">
           <div class="card-header bg-dark text-white">
-            <h4 class="mt-1 mb-0 float-left">{{$blog -> name}}</h4>
-            <p class="card-subtitle text-muted mb-0 float-right align-middle">Datum: 16/8/2019</p>
+            <h4 class="mt-1 mb-0">{{$blog -> name}}</h4>
           </div>
           <div class="card-body">
             {!!$blog -> blog!!}
+            <p class="text-muted mb-0 mt-4 pl-0 font-italic">Datum: 16/8/2019</p>
           </div>
         </div>
       </div>

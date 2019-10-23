@@ -8,13 +8,14 @@
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}" defer></script>
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Be fit By Ash</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Be fit by Ash</title>
 </head>
 @guest
 @if (Route::has('register'))
 <body style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-dark bg-dark shadow-lg mb-5">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
   </nav>
   <main class="container">
     <img class="w-75 mb-4"src="/img/logo.png" alt="" style="margin: 0 auto; display: block">
@@ -25,7 +26,7 @@
 @else
 <body class="mb-5" style="background-color: #cfdcd3 !important">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-lg mb-4">
-  <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
+  <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,7 +39,7 @@
         <a class="nav-link" href="/blogs">Blogs</a>
       </li>
       <li class="nav-item pr-4 pl-4">
-        <a class="nav-link" href="/tarieven">Tarieven</a>
+        <a class="nav-link" href="/diensten">Diensten</a>
       </li>
       <li class="nav-item pr-4 pl-4 active">
         <a class="nav-link" href="/contact">Contact</a>
@@ -54,7 +55,7 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-left my-3">
-          <form action="contact-form-handler.php" method="post">
+          <!-- <form action="contact-form-handler.php" method="post">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
               <div class="col-sm-8">
@@ -80,9 +81,18 @@
               </div>
             </div>
             <button class="btn btn-primary mt-3" type="submit" name="submit">Verzenden</button>
-          </form>
+          </form> -->
+            <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
+            <p class="mb-0 font-weight-bold">Adres</p>
+            <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
+            <p class="mb-0 font-weight-bold">Email</p>
+            <p class="mb-2">BefitbyAsh@outlook.com</p>
+            <p class="mb-0 font-weight-bold">Telefoon nummer</p>
+            <p class="mb-5">+31 6 10144676</p>
+            <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
+            <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
         </div>
-        <div class="col-md-5 float-right my-3">
+        <div class="col-md-5 my-3 float-right">
           <img class="w-100 shadow rounded" src="img/foto-ashley.jpg" alt="">
         </div>
       </div>
