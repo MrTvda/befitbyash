@@ -54,7 +54,7 @@
         <h2 class="my-0">Contact</h2>
       </div>
       <div class="card-body">
-        <div class="col-md-7 float-left my-3">
+        <div class="col-md-7 float-right my-3">
           <!-- <form action="contact-form-handler.php" method="post">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
@@ -92,8 +92,8 @@
             <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
             <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
         </div>
-        <div class="col-md-5 my-3 float-right">
-          <img class="w-100 shadow rounded" src="img/foto-ashley.jpg" alt="">
+        <div class="col-md-5 my-3 float-left">
+          <img class="w-100 shadow rounded" src="img/header2.jpg" alt="">
         </div>
       </div>
     </div>

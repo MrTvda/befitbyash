@@ -50,7 +50,7 @@
                             @endif -->
                         @else
                             <li class="nav-item">
-                              <a class="btn btn-primary" href="{{ route('homepage')}}">
+                              <a class="btn btn-primary mr-4" href="{{ route('homepage')}}">
                                 View Website
                               </a>
                             </li>
