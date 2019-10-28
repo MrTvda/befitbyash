@@ -67,7 +67,7 @@
           </div>
           <div class="card-body">
             {!!$blog -> blog!!}
-            <p class="text-muted mb-0 mt-4 pl-0 font-italic">Datum: 16/8/2019</p>
+            <p class="text-muted mb-0 mt-4 pl-0 font-italic">Datum: {{$blog -> created_at -> format('d / m / Y')}}</p>
           </div>
         </div>
       </div>

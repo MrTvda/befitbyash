@@ -76,6 +76,7 @@
             <h4 class="font-weight-bold mb-0">Combipakket</h4>
             <p>Ga voor de beste versie van jezelf en zet jezelf op de 1e plaats. Eis geen perfectie en geef jezelf de tijd! Personaltraining (vanaf 6 sessies) en het leefstijlpakket combineren voor het beste resultaat? <br> JA DAT KAN!</p>
             <p>Succesvol afvallen bereik je vooral met de juiste mindset en een plan wat past bij jou! Zet je vandaag een stap naar een gezondere jij?</p>
+            <p>Meld je nu aan en krijg een <span class="font-weight-bold">gratis proefles</span>!</p>
           </div>
         </div>
       </div>
