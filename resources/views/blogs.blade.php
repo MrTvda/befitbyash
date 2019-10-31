@@ -9,19 +9,6 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <title>Be fit by Ash - Blogs</title>
 </head>
-@guest
-@if (Route::has('register'))
-<body style="background-color: #cfdcd3 !important">
-  <nav class="navbar navbar-dark bg-dark shadow-lg mb-5">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
-  </nav>
-  <main class="container">
-    <img class="w-75 mb-4"src="/img/logo.png" alt="" style="margin: 0 auto; display: block">
-    <h1 class="text-center" style="font-size: 3em; font-weight: bold; font-style: italic">Work in progress</h1>
-  </main>
-</body>
-@endif
-@else
 <body class="mb-5" style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-expand-md fixed-nav navbar-dark bg-dark shadow-lg mb-4">
     <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
@@ -57,7 +44,6 @@
         </ul>
       </div>
     </div>
-
     <div data-spy="scroll" data-target="#list-blog" data-offset="100" class="scrollspy">
       @foreach ($blog as $blog)
       <div id="{{$blog -> name}}" class="col-md-9 float-right mb-4">
@@ -75,5 +61,4 @@
     </div>
   </main>
 </body>
-@endguest
 </html>

@@ -14,8 +14,15 @@
     <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be Fit by Ash</a>
   </nav>
   <main class="container">
-    <img class="col-md-8 mx-auto px-0 d-block w-75 my-5"src="/img/logo.png" alt="Logo Be Fit by Ash">
-    <h1 class="text-center" style="font-size: 3em; font-weight: bold; font-style: italic">Work in progress</h1>
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        <h2 class="my-0">404 not found</h2>
+      </div>
+      <div class="card-body">
+        <!-- <img class="w-75 my-4"src="/img/logo.png" alt="" style="margin: 0 auto; display: block"> -->
+        <p class="lead font-weight-bold">Sorry, deze pagina is niet beschikbaar</p>
+      </div>
+    </div>
   </main>
 </body>
 </html>
