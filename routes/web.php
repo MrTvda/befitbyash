@@ -12,8 +12,8 @@
 */
 
 Route::get('/blog', 'Controller@blog')->name('blog')->middleware(['auth','admin']);
-Route::get('/blogs', 'Controller@index');
-Route::get('/blogs1', 'Controller@index2');
+Route::get('/blogs1', 'Controller@index');
+Route::get('/blogs', 'Controller@index2');
 Route::get('/diensten', function() {
   return view('diensten');
 });

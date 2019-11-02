@@ -39,12 +39,14 @@
                   <hr>
                   <h1>Blogs</h1>
                   <hr>
-                  @foreach ($blog as $blog)
-                    <h2>{{$blog -> name}}</h2>
-                    <p>{!!$blog -> blog!!}</p>
-                    <a href="{{route('removeBlog', $blog -> id)}}"><button class="btn btn-danger">Delete</button></a>
+                  @foreach ($blog as $blogs)
+                    <h2>{{$blogs -> name}}</h2>
+                    <p>{!!$blogs -> blog!!}</p>
+                    <p>Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
+                    <a href="{{route('removeBlog', $blogs -> id)}}"><button class="btn btn-danger">Delete</button></a>
                     <hr>
                   @endforeach
+                  {{ $blog -> links() }}
                 </div>
             </div>
         </div>

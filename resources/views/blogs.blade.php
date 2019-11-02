@@ -45,15 +45,15 @@
       </div>
     </div>
     <div data-spy="scroll" data-target="#list-blog" data-offset="100" class="scrollspy">
-      @foreach ($blog as $blog)
-      <div id="{{$blog -> name}}" class="col-md-9 float-right mb-4">
+      @foreach ($blog as $blogs)
+      <div id="{{$blogs -> name}}" class="col-md-9 float-right mb-4">
         <div class="card border-0 shadow">
           <div class="card-header bg-dark text-white">
-            <h4 class="mt-1 mb-0">{{$blog -> name}}</h4>
+            <h4 class="mt-1 mb-0">{{$blogs -> name}}</h4>
           </div>
           <div class="card-body">
-            {!!$blog -> blog!!}
-            <p class="text-muted mb-0 mt-4 pl-0 font-italic">Datum: {{$blog -> created_at -> format('d / m / Y')}}</p>
+            {!!$blogs -> blog!!}
+            <p class="text-muted mb-0 mt-4 pl-0 font-italic">Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
           </div>
         </div>
       </div>
