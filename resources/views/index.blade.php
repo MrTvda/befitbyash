@@ -35,7 +35,7 @@
 <main>
   <div class="container">
     <div class="card border-0 shadow">
-      <div class="card-header bg-dark text-white">
+      <div class="card-header bg-dark text-white sticky-top contentbar">
         <h2 class="my-0">Home</h2>
       </div>
       <div class="card-body">

@@ -3,19 +3,44 @@
   --grijs: #dcdddf;
 }
 
-.navbar-nav.navbar-center {
+/* .navbar-nav.navbar-center {
   position: absolute;
   left: 50%;
   transform: translatex(-50%);
-}
+} */
 
-.masthead {
+/* .masthead {
   height: auto;
   min-height: 500px;
   background-image: url(../img/header.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+} */
+
+.back-to-top {
+  position: fixed;
+  padding: 15px 20px;
+  bottom: 24px;
+  right: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+  }
+
+  .back-to-top {
+    background-color: var(--achtergrond);
+  }
+}
+
+@media (min-width: 768px) {
+  .contentbar {
+    position: relative;
+  }
 }
 
 /* * {

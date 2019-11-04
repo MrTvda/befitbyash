@@ -22,13 +22,13 @@ class Controller extends BaseController
     }
 
     public function index2() {
-      $blog = Blog::simplePaginate(4);
+      $blog = Blog::simplePaginate(6);
 
       return view('blogs2', compact('blog'));
     }
 
     public function blog() {
-      $blog = Blog::paginate(3);
+      $blog = Blog::paginate(6);
 
       return view('blog', compact('blog'));
     }

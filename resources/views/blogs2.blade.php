@@ -11,7 +11,7 @@
   <title>Be fit by Ash - Blogs</title>
 </head>
 <body class="mb-5" style="background-color: #cfdcd3 !important">
-  <nav class="navbar navbar-expand-md fixed-nav navbar-dark bg-dark shadow-lg mb-0">
+  <nav class="navbar navbar-expand-md mb-4 navbar-dark bg-dark shadow">
     <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -34,51 +34,70 @@
     </div>
   </nav>
   <main role="main" class="container">
-    <div class="sticky-top">
-      <div id="list-blog" class="col-md-3 float-left mb-2 sticky-top">
-        <img src="/img/logo.png" alt="logo" class="px-0 d-block mx-auto w-75 mb-4 mt-2 pt-3">
-        <ul class="list-group shadow d-none d-md-block">
+    <div class="sticky-top sidebar">
+    <div class="col-md-3 float-left mb-2">
+      <img src="/img/logo.png" alt="logo" class="px-0 d-block mx-auto w-75 mb-4 mt-2 pt-3">
+        <ul class="list-group shadow d-none d-md-block" id="list-blog">
           @foreach ($blog as $blog1)
-            <a class="list-group-item list-group-item-action bg-dark text-white lead" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>
+            <a class="list-group-item list-group-item-action bg-dark text-white lead shadow" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>
           @endforeach
         </ul>
       </div>
     </div>
-    <div data-spy="scroll" data-target="#list-blog" data-offset="100" class="scrollspy">
-      <div class="card mt-4">
-        <div class="card-header bg-dark text-white p-3">
+      <div class="card card col-md-9 p-0 border-0">
+        <div class="card-header bg-dark text-white contentbar sticky-top">
           <h2 class="m-0">Blogs</h2>
         </div>
-        <div class="card-body px-4 shadow">
+        <div class="card-body shadow">
           <div class="align-left pb-0 text-dark">
             {{ $blog->links() }}
           </div>
+          <div data-spy="scroll" data-target="#list-blog" data-offset="10000" class="scrollspy">
           @foreach ($blog as $blogs)
-          <div id="{{$blogs -> name}}" class="mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">{{$blogs -> name}}</h3>
-                {!!$blogs -> blog!!}
-              </div>
-              <div class="card-footer">
-                <div class="float-right">
-                  <p class="text-muted bg-transparent mb-0 font-italic">Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
+            <div id="{{$blogs -> name}}" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h4>{{$blogs -> name}}</h4>
+                  {!!$blogs -> blog!!}
                 </div>
-                <div class="float-left">
-                  <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
-                  <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
+                <div class="card-footer bg-transparent">
+                  <div class="float-right">
+                    <p class="text-muted mb-0 font-italic">Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
+                  </div>
+                  <div class="float-left">
+                    <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
+                    <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           @endforeach
           <div class="mb-0">
             {{ $blog->links() }}
           </div>
+          <a href="#" class="back-to-top shadow"><i class="fa fa-2x fa-angle-up text-dark"></i></a>
         </div>
       </div>
     </div>
     </div>
   </main>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $('#back-to-top').fadeIn();
+        } else {
+          $('#back-to-top').fadeOut();
+        }
+      });
+        // scroll body to 0px on click
+      $('#back-to-top').click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 400);
+        return false;
+      });
+    });
+  </script>
 </body>
 </html>
