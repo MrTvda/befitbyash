@@ -30,10 +30,10 @@
                     <div class="form-group row mb-0">
                       <label for="name" class="col-md-2 col-form-label">Blognaam </label>
                       <div class="col-md-10">
-                        <input class="form-control" type="text" name="name" placeholder="Blognaam"><br>
+                        <input class="form-control" type="text" name="name" placeholder="Blognaam" required><br>
                       </div>
                     </div>
-                    <textarea class="form-control rounded" name="blog" rows="10" cols="80"></textarea><br>
+                    <textarea class="form-control rounded" name="blog" rows="10" cols="80" required></textarea><br>
                     <input class="btn btn-primary mb-3" type="submit" name="submit" value="Aanmaken">
                   </form>
                   <hr>

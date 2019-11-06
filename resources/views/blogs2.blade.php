@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Be fit by Ash - Blogs</title>
 </head>
-<body class="mb-5" style="background-color: #cfdcd3 !important">
+<body class="mb-4" style="background-color: #cfdcd3 !important">
   <nav class="navbar navbar-expand-md mb-4 navbar-dark bg-dark shadow">
     <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,11 +41,14 @@
           @foreach ($blog as $blog1)
             <a class="list-group-item list-group-item-action bg-dark text-white lead shadow" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>
           @endforeach
+          <div class="list-group-item bg-dark mx-auto">
+            {{ $blog->links() }}
+          </div>
         </ul>
       </div>
     </div>
-      <div class="card card col-md-9 p-0 border-0">
-        <div class="card-header bg-dark text-white contentbar sticky-top">
+      <div class="card col-md-9 p-0 border-0">
+        <div class="card-header bg-dark text-white">
           <h2 class="m-0">Blogs</h2>
         </div>
         <div class="card-body shadow">
@@ -56,8 +59,10 @@
           @foreach ($blog as $blogs)
             <div id="{{$blogs -> name}}" class="mb-4">
               <div class="card">
-                <div class="card-body">
+                <div class="card-header bg-dark text-white pb-0">
                   <h4>{{$blogs -> name}}</h4>
+                </div>
+                <div class="card-body">
                   {!!$blogs -> blog!!}
                 </div>
                 <div class="card-footer bg-transparent">
@@ -75,29 +80,11 @@
           <div class="mb-0">
             {{ $blog->links() }}
           </div>
-          <a href="#" class="back-to-top shadow"><i class="fa fa-2x fa-angle-up text-dark"></i></a>
+          <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fa fa-chevron-up"></i></a>
         </div>
       </div>
     </div>
     </div>
   </main>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-          $('#back-to-top').fadeIn();
-        } else {
-          $('#back-to-top').fadeOut();
-        }
-      });
-        // scroll body to 0px on click
-      $('#back-to-top').click(function () {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 400);
-        return false;
-      });
-    });
-  </script>
 </body>
 </html>

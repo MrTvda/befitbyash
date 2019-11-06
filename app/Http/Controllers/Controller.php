@@ -16,19 +16,19 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function index() {
-      $blog = Blog::simplePaginate(5);
+      $blog = Blog::orderBy('id', 'desc')->simplePaginate(6);
 
       return view('blogs', compact('blog'));
     }
 
     public function index2() {
-      $blog = Blog::simplePaginate(6);
+      $blog = Blog::orderBy('id', 'desc')->simplePaginate(6);
 
       return view('blogs2', compact('blog'));
     }
 
     public function blog() {
-      $blog = Blog::paginate(6);
+      $blog = Blog::orderBy('id', 'desc')->paginate(6);
 
       return view('blog', compact('blog'));
     }
