@@ -42,7 +42,7 @@
       </div>
       <div class="card-body">
         <div class="col-md-7 float-right my-3">
-          <!-- <form action="contact-form-handler.php" method="post">
+          <form action="contact-form-handler.php" method="post">
             <div class="form-group row">
               <label class="col-sm-4 col-form-label" for="Naam">Naam</label>
               <div class="col-sm-8">
@@ -68,7 +68,7 @@
               </div>
             </div>
             <button class="btn btn-primary mt-3" type="submit" name="submit">Verzenden</button>
-          </form> -->
+          </form>
             <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
             <p class="mb-0 font-weight-bold">Adres</p>
             <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
