@@ -5,9 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard<a class="btn btn-primary mr-4" href="{{ route('homepage')}}">
-                  View Website
-                </a></div>
+                <div class="card-header">User permissies</div>
 
                 <div class="card-body">
                   <div class="table-responsive">
