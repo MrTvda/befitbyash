@@ -41,8 +41,9 @@
         <h2 class="my-0">Contact</h2>
       </div>
       <div class="card-body">
-        <div class="col-md-7 float-right my-3">
-          <!-- <form action="contact-form-handler.php" method="post">
+        <div class="row">
+        <div class="col-md float-right my-3">
+          <form action="contact-form-handler.php" method="post">
             <div class="form-group">
               <label for="Naam">Naam</label>
               <input type="text" class="form-control" name="name" placeholder="Naam">
@@ -60,20 +61,23 @@
               <textarea class="form-control" name="message" placeholder="Bericht" rows="8" cols="80"></textarea>
             </div>
             <button class="btn btn-primary mt-3" type="submit" name="submit">Verzenden</button>
-          </form> -->
-            <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
-            <p class="mb-0 font-weight-bold">Adres</p>
-            <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
-            <p class="mb-0 font-weight-bold">Email</p>
-            <p class="mb-2">BefitbyAsh@outlook.com</p>
-            <p class="mb-0 font-weight-bold">Telefoon nummer</p>
-            <p class="mb-5">+31 6 10144676</p>
-            <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
-            <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
+          </form>
         </div>
-        <div class="col-md-5 my-3 float-left">
+        <div class="col-md my-3 float-left">
           <img class="w-100 shadow rounded" src="img/header2.jpg" alt="">
         </div>
+        <div class="col-md">
+          <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
+          <p class="mb-0 font-weight-bold">Adres</p>
+          <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
+          <p class="mb-0 font-weight-bold">Email</p>
+          <p class="mb-2">BefitbyAsh@outlook.com</p>
+          <p class="mb-0 font-weight-bold">Telefoon nummer</p>
+          <p class="mb-5">+31 6 10144676</p>
+          <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
+          <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
+        </div>
+      </div>
       </div>
     </div>
   </div>

@@ -29,7 +29,10 @@ Route::get('/contact', function() {
 
 Route::get('/users', 'Controller@userPage')->name('users')->middleware(['auth', 'admin']);
 Route::post('/addblog', 'Controller@addBlog')->name('addBlog')->middleware(['auth','admin']);
-Route::get('/removeBlog/{id}', 'Controller@removeBlog')->name('removeBlog')->middleware(['auth','admin']);
+Route::get('/removeblog/{id}', 'Controller@removeBlog')->name('removeBlog')->middleware(['auth','admin']);
+
+Route::get('/blog/edit/{id}', 'Controller@indexEditBlog')->name('editBlogPage')->middleware(['auth', 'admin']);
+Route::post('/editblog/{id}', 'Controller@editBlog')->name('editBlog')->middleware(['auth', 'admin']);
 
 Route::get('/changeUserRole/{email}', 'Controller@changeUserRole')->name('changeUserRole')->middleware(['auth','admin']);
 

@@ -43,6 +43,7 @@
                     <h2>{{$blogs -> name}}</h2>
                     <p>{!!$blogs -> blog!!}</p>
                     <p>Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
+                    <a href="{{route('editBlogPage', $blogs -> id)}}"><button class="btn btn-success">Edit</button></a>
                     <a href="{{route('removeBlog', $blogs -> id)}}"><button class="btn btn-danger">Delete</button></a>
                     <hr>
                   @endforeach

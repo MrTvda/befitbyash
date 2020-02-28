@@ -72,4 +72,19 @@ class Controller extends BaseController
       return redirect()->back();
     }
 
+    public function indexEditBlog($id) {
+      $blog = Blog::where('id', $id)->get()->first();
+
+      return view('editblog', compact('blog'));
+    }
+
+    public function editBlog($id, Request $req) {
+      $newData = $req->input('blog');
+      $data = array('blog' => $newData);
+
+      Blog::where('id', $id)->update(['blog' => $req->input('blog')]);
+
+      return redirect()->back();
+    }
+
 }
