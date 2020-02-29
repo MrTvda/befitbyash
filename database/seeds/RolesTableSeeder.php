@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
           'roles' => 'Admin',
         ]);
         DB::table('roles')->insert([
-            'roles' => 'User',
+          'roles' => 'User',
         ]);
     }
 }

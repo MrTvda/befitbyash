@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\Blog;
 use App\User;
+use App\Image;
 use DB;
 
 class Controller extends BaseController
@@ -74,6 +75,7 @@ class Controller extends BaseController
 
     public function indexEditBlog($id) {
       $blog = Blog::where('id', $id)->get()->first();
+      // $image = Images::where('blogname', $blog->name)->get()->first();
 
       return view('editblog', compact('blog'));
     }
@@ -87,4 +89,31 @@ class Controller extends BaseController
       return redirect()->back();
     }
 
+    public function addImage(Request $req, $blog) {
+      $size = $req->size;
+      $place = $req->place;
+      $raw_image = $req->file('image');
+      $image = $raw_image->getClientOriginalName();
+      $name = pathinfo($image,PATHINFO_FILENAME);
+      $current_name = $name;
+      $extension = pathinfo($image, PATHINFO_EXTENSION);
+
+      $i = 1;
+      while(file_exists('img/'.$current_name.".".$extension))
+      {
+          $current_name = (string)$name."_".$i;
+          $image = $current_name.".".$extension;
+          $i++;
+      }
+
+      $destinationPath = public_path('/img');
+      $raw_image->move($destinationPath, $image);
+
+      $data = array('blogname'=>$blog, 'img_source'=>$image, 'img_size'=>$size, 'img_place'=>$place);
+      $blogtable = Blog::where('name', $blog)->get()->first();
+
+      $blogtable->image()->create($data);
+      
+      return redirect()->back();
+    }
 }

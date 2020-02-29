@@ -36,6 +36,8 @@ Route::post('/editblog/{id}', 'Controller@editBlog')->name('editBlog')->middlewa
 
 Route::get('/changeUserRole/{email}', 'Controller@changeUserRole')->name('changeUserRole')->middleware(['auth','admin']);
 
+Route::post('/addimage/{blog}', 'Controller@addImage')->name('addImage')->middleware(['auth','admin']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
