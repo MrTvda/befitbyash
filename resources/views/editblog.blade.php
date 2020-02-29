@@ -23,11 +23,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card">
                 <div class="card-header">{{$blog -> name}}</div>
 
                 <div class="card-body">
+
+                  <h3>Tekst</h3>
                   <form action="{{route('editBlog', $blog -> id)}}" method="post">
                     @csrf
                     <textarea class="form-control rounded" name="blog" rows="10" cols="80">
@@ -36,7 +38,9 @@
                     <input class="btn btn-primary my-3" type="submit" name="submit" value="Aanpassen">
                   </form>
                   <hr>
-                  <form action="{{route('addImage', $blog -> name)}}" enctype="multipart/form-data" method="post">
+                  <h3>Foto</h3>
+                  @if(optional($blog->image)->blogname == null)
+                  <form action="{{route('addImage', $blog -> id)}}" enctype="multipart/form-data" method="post">
                     @csrf
                     <div class="input-group mb-3">
                       <div class="custom-file">
@@ -63,23 +67,30 @@
                       </div>
                       <select name="place" class="custom-select" id="inputGroupSelect01">
                         <option selected>Kies ...</option>
-                        <option value="order-first">Links</option>
-                        <option value="order-last">Rechts</option>
+                        <option value="float-left">Links</option>
+                        <option value="float-right">Rechts</option>
                       </select>
                     </div>
 
                     <input class="btn btn-primary my-3" type="submit" name="submit" value="Aanpassen">
                   </form>
-                  <div class="row">
-                    <div class="col-md">
-                      <p>{!!$blog->blog!!}</p>
+                  @else
+                    <div class="">
+                      <img class="w-25" src="{{optional($blog->image)->img_source}}" alt="">
                     </div>
+                    <a href="{{route('removeImage', optional($blog->image)->id)}}"><button class="btn btn-danger">Delete</button></a>
+                  @endif
+                  <hr>
+                  <h3>Preview</h3>
+                  <div class="">
                     @if(optional($blog->image)->blogname != null)
-                      <div class="{{optional($blog->image) -> img_size}} {{optional($blog->image) -> img_place}}">
-                        <img src="/img/{{optional($blog->image) -> img_source}}" class="w-100" alt="">
-                      </div>
+                    <div class="{{optional($blog->image) -> img_size}} {{optional($blog->image) -> img_place}}">
+                      <img src="/img/{{optional($blog->image) -> img_source}}" class="w-100" alt="">
+                    </div>
                     @endif
+                    {!!$blog->blog!!}
                   </div>
+
                   <hr>
                   <a href="{{route('blog')}}"><button type="button" class="btn btn-secondary">Vorige pagina</button></a>
                 </div>

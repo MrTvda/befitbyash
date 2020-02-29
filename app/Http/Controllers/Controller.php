@@ -89,7 +89,9 @@ class Controller extends BaseController
       return redirect()->back();
     }
 
-    public function addImage(Request $req, $blog) {
+    public function addImage(Request $req, $id) {
+      $blog = Blog::where('id', $id)->get()->first();
+      $blogname = $blog->name;
       $size = $req->size;
       $place = $req->place;
       $raw_image = $req->file('image');
@@ -109,11 +111,18 @@ class Controller extends BaseController
       $destinationPath = public_path('/img');
       $raw_image->move($destinationPath, $image);
 
-      $data = array('blogname'=>$blog, 'img_source'=>$image, 'img_size'=>$size, 'img_place'=>$place);
-      $blogtable = Blog::where('name', $blog)->get()->first();
+      $data = array('blogname'=>$blogname, 'img_source'=>$image, 'img_size'=>$size, 'img_place'=>$place);
 
-      $blogtable->image()->create($data);
-      
+      $blog->image()->create($data);
+
+      return redirect()->back();
+    }
+
+    public function removeImage($id) {
+      $image = DB::table('images')->where('id','=', $id)->get()->first();
+      unlink(public_path("/img/".$image->img_source));
+      Image::where('id','=', $id)->delete();
+
       return redirect()->back();
     }
 }
