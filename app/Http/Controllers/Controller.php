@@ -28,6 +28,10 @@ class Controller extends BaseController
       return view('blogs2', compact('blog'));
     }
 
+    public function viewBlogs() {
+      return $this->blog();
+    }
+
     public function blog() {
       $blog = Blog::orderBy('id', 'desc')->paginate(6);
 
@@ -35,21 +39,25 @@ class Controller extends BaseController
     }
 
     public function addBlog(Request $req) {
-      // Aanvragen input van pagina
       $name = $req->input('name');
       $blog = $req->input('blog');
 
       $data = array('name'=>$name, 'blog'=>$blog);
 
-      // Data struren naar database
-      DB::table('blog')->insert($data);
-      // Terugverwijzen naar vorige pagina met succes alert
+      Blog::insert($data);
+
       return redirect()->back();
     }
 
     public function removeBlog($id) {
-      DB::table('blog')->where('id', $id)->delete();
-      return redirect()->back();
+      $image = Image::where('blog_id','=', $id)->get()->first();
+      if($image) {
+        unlink(public_path("/img/".$image->img_source));
+        Image::where('blog_id','=', $id)->delete();
+      }
+      Blog::where('id', $id)->delete();
+
+      return $this->blog();
     }
 
     public function userPage() {
@@ -58,7 +66,7 @@ class Controller extends BaseController
     }
 
     public function changeUserRole($email) {
-      $user = DB::table('users')->where('email', $email)->get()->first();
+      $user = User::where('email', $email)->get()->first();
 
       if (($user -> user_role) == 'Admin') {
         User::where('email', $email)->update([
@@ -119,7 +127,7 @@ class Controller extends BaseController
     }
 
     public function removeImage($id) {
-      $image = DB::table('images')->where('id','=', $id)->get()->first();
+      $image = Image::where('id','=', $id)->get()->first();
       unlink(public_path("/img/".$image->img_source));
       Image::where('id','=', $id)->delete();
 

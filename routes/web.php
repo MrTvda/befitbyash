@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/blog', 'Controller@blog')->name('blog')->middleware(['auth','admin']);
+Route::get('/blog', 'Controller@viewBlogs')->name('blog')->middleware(['auth','admin']);
 Route::get('/blogs', 'Controller@index');
 Route::get('/diensten', function() {
   return view('diensten');

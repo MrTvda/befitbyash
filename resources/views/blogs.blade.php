@@ -11,7 +11,7 @@
   <title>Be fit by Ash - Blogs</title>
 </head>
 <body class="mb-4" style="background-color: #cfdcd3 !important">
-  <nav class="navbar navbar-expand-md mb-2 navbar-dark bg-dark shadow">
+  <nav class="navbar navbar-expand-md mb-3 navbar-dark bg-dark shadow">
     <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon "></span>
@@ -41,12 +41,10 @@
           @foreach ($blog as $blog1)
             <a class="list-group-item list-group-item-action bg-dark text-white lead shadow" href="#{{$blog1 -> name}}">{{$blog1 -> name}}</a>
           @endforeach
-          @if($blog->hasPages())
-          <div class="list-group-item bg-dark mx-auto">
-            {{ $blog->links() }}
-          </div>
-          @endif
         </ul>
+        <div class="justify-content-center mt-4 d-none d-md-flex">
+          {{ $blog->links() }}
+        </div>
       </div>
     </div>
       <div class="card col-md-9 p-0 border-0 bg-transparent">

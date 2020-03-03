@@ -11,12 +11,10 @@
         link_context_toolbar: true,
         default_link_target: "_blank",
         width: '100%',
-        theme_advanced_buttons3 : "hr,removeformat,visualaid,separator,sub,sup,separator,charmap"
+        theme_advanced_buttons3 : "hr,removeformat,visualaid,separator,sub,sup,separator,charmap",
+        body_class: "mceBlackBody"
     });
   </script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 @extends('layouts.app')
 
@@ -24,11 +22,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-9">
-            <div class="card">
-                <div class="card-header">{{$blog -> name}}</div>
+            <div class="card border-0">
+                <div class="card-header bg-dark text-light">
+                  <h2 class="my-0">Blog {{$blog -> name}}</h2>
+                </div>
 
                 <div class="card-body">
-
                   <h3>Tekst</h3>
                   <form action="{{route('editBlog', $blog -> id)}}" method="post">
                     @csrf
@@ -44,16 +43,16 @@
                     @csrf
                     <div class="input-group mb-3">
                       <div class="custom-file">
-                        <input name="image" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        <input name="image" type="file" class="custom-file-input bg-dark text-light" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label bg-secondary text-light border-dark" for="inputGroupFile01">Choose file</label>
                       </div>
                     </div>
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Grootte</label>
+                        <label class="input-group-text bg-dark text-light border-dark" for="inputGroupSelect01">Grootte</label>
                       </div>
-                      <select name="size" class="custom-select" id="inputGroupSelect01">
+                      <select name="size" class="custom-select bg-secondary text-light border-dark" id="inputGroupSelect01">
                         <option selected>Kies ...</option>
                         <option value="col-md-2">Klein</option>
                         <option value="col-md-4">Middel</option>
@@ -63,9 +62,9 @@
 
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Plaatsing</label>
+                        <label class="input-group-text bg-dark text-light border-dark" for="inputGroupSelect01">Plaatsing</label>
                       </div>
-                      <select name="place" class="custom-select" id="inputGroupSelect01">
+                      <select name="place" class="custom-select bg-secondary text-light border-dark" id="inputGroupSelect01">
                         <option selected>Kies ...</option>
                         <option value="float-left">Links</option>
                         <option value="float-right">Rechts</option>
@@ -75,25 +74,30 @@
                     <input class="btn btn-primary my-3" type="submit" name="submit" value="Aanpassen">
                   </form>
                   @else
-                    <div class="">
-                      <img class="w-25" src="{{optional($blog->image)->img_source}}" alt="">
-                    </div>
-                    <a href="{{route('removeImage', optional($blog->image)->id)}}"><button class="btn btn-danger">Delete</button></a>
+                  <div class="">
+                    <img class="w-50 mb-3" src="/img/{{optional($blog->image)->img_source}}" alt="">
+                  </div>
+                  <a href="{{route('removeImage', optional($blog->image)->id)}}"><button class="btn btn-danger">Delete</button></a>
                   @endif
                   <hr>
-                  <h3>Preview</h3>
-                  <div class="">
-                    @if(optional($blog->image)->blogname != null)
-                    <div class="{{optional($blog->image) -> img_size}} {{optional($blog->image) -> img_place}}">
-                      <img src="/img/{{optional($blog->image) -> img_source}}" class="w-100" alt="">
-                    </div>
+                  <h3 class="mb-3">Preview</h3>
+                  @if(optional($blog->image)->img_source != null)
+                    @if(optional($blog->image)->img_place == 'float-right')
+                      <div class="p-0 mb-3 ml-md-3 {{optional($blog->image)->img_size}} {{optional($blog->image)->img_place}}">
+                        <img class="w-100 rounded" src="/img/{{optional($blog->image)->img_source}}" alt="">
+                      </div>
+                    @else
+                      <div class="p-0 mb-3 mr-md-3 {{optional($blog->image)->img_size}} {{optional($blog->image)->img_place}}">
+                        <img class="w-100 rounded" src="/img/{{optional($blos->image)->img_source}}" alt="">
+                      </div>
                     @endif
-                    {!!$blog->blog!!}
-                  </div>
-
-                  <hr>
-                  <a href="{{route('blog')}}"><button type="button" class="btn btn-secondary">Vorige pagina</button></a>
+                  @endif
+                  {!!$blog -> blog!!}
                 </div>
+            </div>
+            <div class="mt-4">
+              <a class="float-left" href="{{route('blog')}}"><button type="button" class="btn btn-secondary">Vorige pagina</button></a>
+              <a class="float-right" href="{{route('removeBlog', $blog -> id)}}"><button class="btn btn-danger">Delete blog</button></a>
             </div>
         </div>
     </div>

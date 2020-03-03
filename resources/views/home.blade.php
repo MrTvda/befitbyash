@@ -4,8 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+            <div class="card border-0">
+                <div class="card-header bg-dark text-white">
+                  <h2 class="my-0">Dashboard</h2>
+                </div>
 
                 <div class="card-body">
                   <table class="table">

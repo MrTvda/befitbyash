@@ -22,38 +22,37 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Toevoegen blogs</div>
+                <div class="card-header bg-dark text-light"><h2 class="my-0">Toevoegen blogs</h2></div>
 
                 <div class="card-body">
                   <form action="{{route('addBlog')}}" method="post">
                     @csrf
-                    <!-- <div class="form-group row mb-0">
-                      <label for="name" class="col-md-2 col-form-label">Blognaam </label>
-                      <div class="col-md-10">
-                        <input class="form-control" type="text" name="name" placeholder="Blognaam" required><br>
-                      </div>
-                    </div> -->
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Blognaam</span>
+                        <span class="input-group-text bg-dark text-light border-dark" id="inputGroup-sizing-default">Blognaam</span>
                       </div>
-                      <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Voer blognaam in ...">
+                      <input type="text" name="name" class="form-control text-input bg-secondary text-white border-dark" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Voer blognaam in ...">
+                      <div class="input-group-append">
+                        <button class="btn btn-bfba border-dark" type="submit" name="submit">Aanmaken</button>
+                      </div>
                     </div>
-                    <textarea class="form-control rounded" name="blog" rows="10" cols="80"></textarea><br>
-                    <input class="btn btn-primary mb-3" type="submit" name="submit" value="Aanmaken">
                   </form>
                   <hr>
                   <h1>Blogs</h1>
-                  <hr>
+                  <table class="table">
+                    <tr>
+                      <th colspan="2">Blog</th>
+                    </tr>
                   @foreach ($blog as $blogs)
-                    <h2>{{$blogs -> name}}</h2>
-                    <p>{!!$blogs -> blog!!}</p>
-                    <p>foto: {{optional($blogs->image)->blogname}}</p>
-                    <p>Datum: {{$blogs -> created_at -> format('d-m-Y , H:i:s')}}</p>
-                    <a href="{{route('editBlogPage', $blogs -> id)}}"><button class="btn btn-success">Edit</button></a>
-                    <a href="{{route('removeBlog', $blogs -> id)}}"><button class="btn btn-danger">Delete</button></a>
-                    <hr>
+                    <tr>
+                      <td>{{$blogs -> name}}</td>
+                      <td class="text-right">
+                        <a href="{{route('editBlogPage', $blogs -> id)}}"><button class="btn btn-success">Edit</button></a>
+                        <!-- <a href="{{route('removeBlog', $blogs -> id)}}"><button class="btn btn-danger">Delete</button></a> -->
+                      </td>
+                    </tr>
                   @endforeach
+                  </table>
                   {{ $blog -> links() }}
                 </div>
             </div>

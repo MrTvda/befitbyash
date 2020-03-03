@@ -18,6 +18,11 @@
   background-repeat: no-repeat;
 } */
 
+body.mceContentBody {
+  background: #000;
+  color: white;
+}
+
 .back-to-top {
   position: fixed;
   padding: 15px 20px;
@@ -41,6 +46,28 @@
   .contentbar {
     position: relative;
   }
+}
+
+.text-input::placeholder {
+  color: var(--grijs);
+  opacity: 1;
+}
+
+.text-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+.text-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+.btn-bfba {
+  background-color: #cfdcd3;
+}
+
+.btn-bfba {
 }
 
 /* * {
