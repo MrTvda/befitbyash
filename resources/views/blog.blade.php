@@ -33,7 +33,7 @@
                       </div>
                       <input type="text" name="name" class="form-control text-input bg-secondary text-white border-dark" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Voer blognaam in ...">
                       <div class="input-group-append">
-                        <button class="btn btn-bfba border-dark" type="submit" name="submit">Aanmaken</button>
+                        <button class="btn btn-light border-dark" type="submit" name="submit">Aanmaken</button>
                       </div>
                     </div>
                   </form>
