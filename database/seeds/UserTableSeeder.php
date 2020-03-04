@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
           'user_role' => 'Admin'
         ]);
         DB::table("users")->insert([
-          'name' => 'Admin',
+          'name' => 'Ashley van den Berg',
           'email' => 'befitbyash@outlook.com',
           'password' => Hash::make('Befitbyashley2020'),
           'user_role' => 'Admin'
