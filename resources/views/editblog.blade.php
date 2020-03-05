@@ -54,9 +54,9 @@
                       </div>
                       <select name="size" class="custom-select bg-secondary text-light border-dark" id="inputGroupSelect01">
                         <option selected>Kies ...</option>
-                        <option value="col-md-2">Klein</option>
+                        <option value="col-md-3">Klein</option>
                         <option value="col-md-4">Middel</option>
-                        <option value="col-md-6">Groot</option>
+                        <option value="col-md-5">Groot</option>
                       </select>
                     </div>
 
@@ -65,13 +65,12 @@
                         <label class="input-group-text bg-dark text-light border-dark" for="inputGroupSelect01">Plaatsing</label>
                       </div>
                       <select name="place" class="custom-select bg-secondary text-light border-dark" id="inputGroupSelect01">
-                        <option selected>Kies ...</option>
+                        <option value="float-right" selected>Rechts</option>
                         <option value="float-left">Links</option>
-                        <option value="float-right">Rechts</option>
                       </select>
                     </div>
 
-                    <input class="btn btn-primary my-3" type="submit" name="submit" value="Aanpassen">
+                    <input class="btn btn-success my-3" type="submit" name="submit" value="Toevoegen">
                   </form>
                   @else
                   <div class="">

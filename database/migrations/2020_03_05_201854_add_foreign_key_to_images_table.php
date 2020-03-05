@@ -14,7 +14,7 @@ class AddForeignKeyToImagesTable extends Migration
      public function up()
      {
          Schema::table('images', function (Blueprint $table) {
-           $table->foreign('blog_id')->references('id')->on('blog')->onDelete('cascade');
+           $table->foreign('blog_id')->references('id')->on('blogs')->onDelete('cascade');
          });
      }
 

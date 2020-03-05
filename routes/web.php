@@ -13,15 +13,12 @@
 
 Route::get('/blog', 'Controller@viewBlogs')->name('blog')->middleware(['auth','admin']);
 Route::get('/blogs', 'Controller@index');
-Route::get('/diensten', function() {
-  return view('diensten');
-});
-Route::get('/', function() {
-  return view('index');
-})->name('homepage');
-Route::get('/contact', function() {
-  return view('contact');
-})->name('contact');
+
+Route::view('/', 'index')->name('homepage');
+Route::view('/diensten', 'diensten')->name('diensten');
+Route::view('/contact', 'contact')->name('contact');
+Route::view('/contact/form', 'contactform')->name('contactForm')->middleware(['auth', 'admin']);;
+
 
 // Route::get('/', function() {
 //   return view('work-in-progress');

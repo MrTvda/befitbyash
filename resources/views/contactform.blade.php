@@ -35,34 +35,31 @@
   </div>
 </nav>
 <main>
-  <div class="container">
-    <div class="card border-0 shadow">
+  <div class="container d-flex justify-content-center">
+    <div class="card border-0">
       <div class="card-header bg-dark text-white">
-        <h2 class="my-0">Contact</h2>
+        <h2 class="my-0">Contact formulier</h2>
       </div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-4 my-3 ml-3 float-left">
-            <img class="w-100 shadow rounded" src="/img/header2.jpg" alt="">
+        <form action="contact-form-handler.php" method="post">
+          <div class="form-group">
+            <label for="Naam">Naam</label>
+            <input type="text" class="form-control" name="name" placeholder="Naam">
           </div>
-          <div class="col-md my-3">
-            <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
-            <p class="mb-0 font-weight-bold">Adres</p>
-            <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
-            <p class="mb-0 font-weight-bold">Email</p>
-            <p class="mb-2">BefitbyAsh@outlook.com</p>
-            <p class="mb-0 font-weight-bold">Telefoon nummer</p>
-            <p class="mb-5">+31 6 10144676</p>
-            <h5 class="font-weight-bold">Volg mij!</h5>
-            <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
-            <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
-            <br>
-            @guest
-            @else
-            <a href="{{route('contactForm')}}"><button class="btn btn-dark mt-4">Neem contact op</button></a>
-            @endguest
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input class="form-control" type="email" name="mail" placeholder="Email">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="Onderwerp">Onderwerp</label>
+            <input class="form-control" type="text" name="subject" placeholder="Onderwerp">
+          </div>
+          <div class="form-group">
+            <label for="Bericht">Bericht</label>
+            <textarea class="form-control" name="message" placeholder="Bericht" rows="4" cols="60"></textarea>
+          </div>
+          <button class="btn btn-dark mt-3" type="submit" name="submit">Verzenden</button>
+        </form>
       </div>
     </div>
   </div>
