@@ -52,7 +52,7 @@ class Controller extends BaseController
     public function removeBlog($id) {
       $image = Image::where('blog_id','=', $id)->get()->first();
       if($image) {
-        unlink(public_path("/img/".$image->img_source));
+        unlink(public_path("/img/blogs/".$image->img_source));
         Image::where('blog_id','=', $id)->delete();
       }
       Blog::where('id', $id)->delete();
@@ -116,7 +116,7 @@ class Controller extends BaseController
           $i++;
       }
 
-      $destinationPath = public_path('/img');
+      $destinationPath = public_path('/img/blogs');
       $raw_image->move($destinationPath, $image);
 
       $data = array('blogname'=>$blogname, 'img_source'=>$image, 'img_size'=>$size, 'img_place'=>$place);
@@ -128,7 +128,7 @@ class Controller extends BaseController
 
     public function removeImage($id) {
       $image = Image::where('id','=', $id)->get()->first();
-      unlink(public_path("/img/".$image->img_source));
+      unlink(public_path("/img/blogs/".$image->img_source));
       Image::where('id','=', $id)->delete();
 
       return redirect()->back();

@@ -65,11 +65,11 @@
                   @if(optional($blogs->image)->img_source != null)
                     @if(optional($blogs->image)->img_place == 'float-right')
                     <div class="p-0 mb-3 ml-md-3 {{optional($blogs->image)->img_size}} {{optional($blogs->image)->img_place}}">
-                      <img class="w-100 rounded" src="img/{{optional($blogs->image)->img_source}}" alt="">
+                      <img class="w-100 rounded" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
                     </div>
                     @else
                     <div class="p-0 mb-3 mr-md-3 {{optional($blogs->image)->img_size}} {{optional($blogs->image)->img_place}}">
-                      <img class="w-100 rounded" src="img/{{optional($blogs->image)->img_source}}" alt="">
+                      <img class="w-100 rounded" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
                     </div>
                     @endif
                   @endif

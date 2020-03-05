@@ -53,8 +53,7 @@
                         <label class="input-group-text bg-dark text-light border-dark" for="inputGroupSelect01">Grootte</label>
                       </div>
                       <select name="size" class="custom-select bg-secondary text-light border-dark" id="inputGroupSelect01">
-                        <option selected>Kies ...</option>
-                        <option value="col-md-3">Klein</option>
+                        <option selected value="col-md-3">Klein</option>
                         <option value="col-md-4">Middel</option>
                         <option value="col-md-5">Groot</option>
                       </select>
@@ -74,7 +73,7 @@
                   </form>
                   @else
                   <div class="">
-                    <img class="w-50 mb-3" src="/img/{{optional($blog->image)->img_source}}" alt="">
+                    <img class="w-50 mb-3" src="/img/blogs/{{optional($blog->image)->img_source}}" alt="">
                   </div>
                   <a href="{{route('removeImage', optional($blog->image)->id)}}"><button class="btn btn-danger">Delete</button></a>
                   @endif
@@ -83,11 +82,11 @@
                   @if(optional($blog->image)->img_source != null)
                     @if(optional($blog->image)->img_place == 'float-right')
                       <div class="p-0 mb-3 ml-md-3 {{optional($blog->image)->img_size}} {{optional($blog->image)->img_place}}">
-                        <img class="w-100 rounded" src="/img/{{optional($blog->image)->img_source}}" alt="">
+                        <img class="w-100 rounded" src="/img/blogs/{{optional($blog->image)->img_source}}" alt="">
                       </div>
                     @else
                       <div class="p-0 mb-3 mr-md-3 {{optional($blog->image)->img_size}} {{optional($blog->image)->img_place}}">
-                        <img class="w-100 rounded" src="/img/{{optional($blog->image)->img_source}}" alt="">
+                        <img class="w-100 rounded" src="/img/blogs/{{optional($blog->image)->img_source}}" alt="">
                       </div>
                     @endif
                   @endif
