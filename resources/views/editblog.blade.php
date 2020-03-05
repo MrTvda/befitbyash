@@ -88,7 +88,7 @@
                       </div>
                     @else
                       <div class="p-0 mb-3 mr-md-3 {{optional($blog->image)->img_size}} {{optional($blog->image)->img_place}}">
-                        <img class="w-100 rounded" src="/img/{{optional($blos->image)->img_source}}" alt="">
+                        <img class="w-100 rounded" src="/img/{{optional($blog->image)->img_source}}" alt="">
                       </div>
                     @endif
                   @endif
