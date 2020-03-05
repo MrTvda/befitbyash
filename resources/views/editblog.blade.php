@@ -28,6 +28,8 @@
                 </div>
 
                 <div class="card-body">
+                  <p>Laatste update: {{$blog -> updated_at -> format('d-m-Y H:i:s')}}</p>
+                  <hr>
                   <h3>Tekst</h3>
                   <form action="{{route('editBlog', $blog -> id)}}" method="post">
                     @csrf
