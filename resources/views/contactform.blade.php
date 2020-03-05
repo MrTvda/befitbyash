@@ -41,7 +41,7 @@
         <h2 class="my-0">Contact formulier</h2>
       </div>
       <div class="card-body">
-        <form action="contact-form-handler.php" method="post">
+        <form action="/contact-form-handler.php" method="post">
           <div class="form-group">
             <label for="Naam">Naam</label>
             <input type="text" class="form-control" name="name" placeholder="Naam">
