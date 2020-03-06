@@ -19,6 +19,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+          selector: 'textarea',
+          plugins: "paste autolink link anchor wordcount lists",
+          menubar: false,
+          toolbar: 'undo redo | formatselect | bold italic underline | justifyfull | bullist numlist',
+          paste_as_text: true,
+          link_context_toolbar: true,
+          default_link_target: "_blank",
+          width: '100%',
+          theme_advanced_buttons3 : "hr,removeformat,visualaid,separator,sub,sup,separator,charmap",
+          body_class: "mceBlackBody"
+      });
+    </script>
 </head>
 <body style="background-color: #cfdcd3 !important">
     <div id="app">

@@ -12,7 +12,7 @@
 */
 
 Route::get('/blog', 'Controller@viewBlogs')->name('blog')->middleware(['auth','admin']);
-Route::get('/blogs', 'Controller@index');
+Route::get('/blogs', 'Controller@index')->name('blogs');
 
 Route::view('/', 'index')->name('homepage');
 Route::view('/diensten', 'diensten')->name('diensten');

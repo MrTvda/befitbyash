@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-  <script src="{{ asset('js/app.js') }}" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Be fit by Ash - Blogs</title>
-</head>
-<body class="mb-4" style="background-color: #cfdcd3 !important">
-  <nav class="navbar navbar-expand-md mb-3 navbar-dark bg-dark shadow">
-    <a class="navbar-brand" href="/" style="font-style: italic; font-size: 1.7em; color: #cfdcd3 !important; font-weight: bold">Be fit by Ash</a>
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav" style="font-size: 1.2em;">
-        <li class="nav-item pr-4 pl-4">
-          <a class="nav-link stretched-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item pr-4 pl-4 active">
-          <a class="nav-link" href="/blogs">Blogs</a>
-        </li>
-        <li class="nav-item pr-4 pl-4">
-          <a class="nav-link" href="/diensten">Diensten</a>
-        </li>
-        <li class="nav-item pr-4 pl-4 ">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main role="main" class="container">
+@extends('layouts.befitbyash')
+
+@section('content')
     <div class="sticky-top sidebar">
     <div class="col-md-3 float-left mb-2">
       <img src="/img/logo.png" alt="logo" class="px-0 d-block mx-auto w-75 mb-4 mt-2 pt-3">
@@ -94,6 +61,4 @@
       </div>
     </div>
     </div>
-  </main>
-</body>
-</html>
+@endsection
