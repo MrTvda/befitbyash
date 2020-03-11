@@ -7,11 +7,10 @@
         <h2 class="my-0">Contact</h2>
       </div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-4 my-3 ml-3 float-left">
+          <div class="col-md-4 p-0 mb-3 mr-3 float-left">
             <img class="w-100 shadow rounded" src="/img/header2.jpg" alt="">
           </div>
-          <div class="col-md my-3">
+          <div class="">
             <h4 class="mb-3 font-weight-bold font-italic">Be fit by Ash</h4>
             <p class="mb-0 font-weight-bold">Adres</p>
             <p class="mb-2">Molenvlietweg 18,<br> 1432 GW Aalsmeer</p>
@@ -28,7 +27,6 @@
             <a href="{{route('contactForm')}}"><button class="btn btn-dark mt-4">Neem contact op</button></a>
             @endguest
           </div>
-        </div>
       </div>
     </div>
   </div>
