@@ -8,7 +8,7 @@
       </div>
       <div class="card-body rounded">
         <div class="col-md-6 p-0 ml-3 mb-3 float-right">
-          <img class="rounded shadow w-100" src="/img/header.jpg" alt="">
+          <img class="rounded shadow w-100" src="/img/fit_together.jpg" alt="">
         </div>
         <div class="">
           <h4 class="font-weight-bold mb-0">Personal training</h4>
