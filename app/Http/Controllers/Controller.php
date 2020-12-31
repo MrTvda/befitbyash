@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use App\Blog;
 use App\User;
 use App\Image;
-use DB;
 
 class Controller extends BaseController
 {
@@ -22,38 +21,32 @@ class Controller extends BaseController
       return view('blogs', compact('blog'));
     }
 
-    public function index2() {
-      $blog = Blog::orderBy('id', 'desc')->simplePaginate(6);
-
-      return view('blogs2', compact('blog'));
-    }
-
     public function viewBlogs() {
       return $this->blog();
     }
 
     public function blog() {
-      $blog = Blog::orderBy('id', 'desc')->paginate(6);
+      $blogs = Blog::orderBy('id', 'desc')->get();
 
-      return view('blog', compact('blog'));
+      return view('blog', compact('blogs'));
     }
 
     public function addBlog(Request $req) {
       $name = $req->input('name');
       $blog = $req->input('blog');
 
-      $data = array('name'=>$name, 'blog'=>$blog);
+      $data = array('name' => $name, 'blog' => $blog);
 
       Blog::insert($data);
 
-      return redirect()->back();
+      return $this->blog();
     }
 
     public function removeBlog($id) {
-      $image = Image::where('blog_id','=', $id)->get()->first();
+      $image = Image::where('blog_id', $id)->get()->first();
       if($image) {
         unlink(public_path("/img/blogs/".$image->img_source));
-        Image::where('blog_id','=', $id)->delete();
+        Image::where('blog_id', $id)->delete();
       }
       Blog::where('id', $id)->delete();
 
@@ -69,13 +62,9 @@ class Controller extends BaseController
       $user = User::where('email', $email)->get()->first();
 
       if (($user -> user_role) == 'Admin') {
-        User::where('email', $email)->update([
-          'user_role' => 'User',
-        ]);
+        User::where('email', $email)->update(['user_role' => 'User']);
       } else {
-        User::where('email', $email)->update([
-          'user_role' => 'Admin',
-        ]);
+        User::where('email', $email)->update(['user_role' => 'Admin']);
       }
 
       return redirect()->back();
@@ -83,16 +72,24 @@ class Controller extends BaseController
 
     public function indexEditBlog($id) {
       $blog = Blog::where('id', $id)->get()->first();
-      // $image = Images::where('blogname', $blog->name)->get()->first();
 
       return view('editblog', compact('blog'));
     }
 
-    public function editBlog($id, Request $req) {
-      $newData = $req->input('blog');
-      $data = array('blog' => $newData);
+    public function editBlogName($id, Request $req) {
+      $name = $req->input('name');
+      $data = array('name' => $name);
 
-      Blog::where('id', $id)->update(['blog' => $req->input('blog')]);
+      Blog::where('id', $id)->update($data);
+
+      return redirect()->back();
+    }
+
+    public function editBlog($id, Request $req) {
+      $blog = $req->input('blog');
+      $data = array('blog' => $blog);
+
+      Blog::where('id', $id)->update($data);
 
       return redirect()->back();
     }

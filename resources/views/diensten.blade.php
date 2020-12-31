@@ -10,7 +10,7 @@
         <div class="col-md-6 p-0 ml-3 mb-3 float-right">
           <img class="rounded shadow w-100" src="/img/fit_together.jpg" alt="">
         </div>
-        <div class="">
+        <div>
           <h4 class="font-weight-bold mb-0">Personal training</h4>
           <p>
             Persoonlijke begeleiding is de meest effectieve trainingsmethode om iemand in conditie te brengen. Ik maak altijd een passend en op het lichaam van de klant afgestemd programma die past bij haar/zijn wensen!

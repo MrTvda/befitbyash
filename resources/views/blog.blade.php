@@ -22,38 +22,25 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-dark text-light"><h2 class="my-0">Toevoegen blogs</h2></div>
-
+                <div class="card-header bg-dark text-light">
+                  <a class="float-right" href="{{route('addBlogPage')}}"><button class="btn btn-success">Toevoegen</button></a>
+                  <h2 class="my-0">Blogs</h2>
+                </div>
                 <div class="card-body">
-                  <form action="{{route('addBlog')}}" method="post">
-                    @csrf
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-dark text-light border-dark" id="inputGroup-sizing-default">Blognaam</span>
-                      </div>
-                      <input type="text" name="name" class="form-control text-input bg-secondary text-white border-dark" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Voer blognaam in ...">
-                      <div class="input-group-append">
-                        <button class="btn btn-light border-dark" type="submit" name="submit">Aanmaken</button>
-                      </div>
-                    </div>
-                  </form>
-                  <hr>
-                  <h1>Blogs</h1>
                   <table class="table">
                     <tr>
                       <th colspan="2">Blog</th>
                     </tr>
-                  @foreach ($blog as $blogs)
+                    @foreach ($blogs as $blog)
                     <tr>
-                      <td>{{$blogs -> name}}</td>
+                      <td>{{$blog -> name}}</td>
                       <td class="text-right">
-                        <a href="{{route('editBlogPage', $blogs -> id)}}"><button class="btn btn-success">Edit</button></a>
-                        <!-- <a href="{{route('removeBlog', $blogs -> id)}}"><button class="btn btn-danger">Delete</button></a> -->
+                        <a class="mr-2" href="{{route('editBlogPage', $blog -> id)}}"><button class="btn btn-primary">Wijzigen</button></a>
+                        <a href="{{route('removeBlog', $blog -> id)}}"><button class="btn btn-danger">Verwijderen</button></a>
                       </td>
                     </tr>
-                  @endforeach
+                    @endforeach
                   </table>
-                  {{ $blog -> links() }}
                 </div>
             </div>
         </div>

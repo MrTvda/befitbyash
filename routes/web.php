@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,31 +14,38 @@
 |
 */
 
-Route::get('/blog', 'Controller@viewBlogs')->name('blog')->middleware(['auth','admin']);
+Auth::routes();
+
 Route::get('/blogs', 'Controller@index')->name('blogs');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/', 'index')->name('homepage');
 Route::view('/diensten', 'diensten')->name('diensten');
-Route::view('/contact', 'contact')->name('contact');
-Route::view('/contact/form', 'contactform')->name('contactForm')->middleware(['auth', 'admin']);;
 
+Route::prefix('/contact')->group(function() {
+    Route::view('/', 'contact')->name('contact');
+    Route::view('/contactform', 'contactform')->name('contactForm');
+    Route::view('/registrationform', 'registrationForm')->name('registrationForm');
+});
 
-// Route::get('/', function() {
-//   return view('work-in-progress');
-// });
+Route::prefix('/mail')->group(function() {
+    Route::post('/contact', 'MailController@SendContactMail')->name('sendContactMail');
+    Route::post('/registration', 'MailController@SendRegistrationMail')->name('sendRegistrationMail');
+});
 
-Route::get('/users', 'Controller@userPage')->name('users')->middleware(['auth', 'admin']);
-Route::post('/addblog', 'Controller@addBlog')->name('addBlog')->middleware(['auth','admin']);
-Route::get('/removeblog/{id}', 'Controller@removeBlog')->name('removeBlog')->middleware(['auth','admin']);
-
-Route::get('/blog/edit/{id}', 'Controller@indexEditBlog')->name('editBlogPage')->middleware(['auth', 'admin']);
-Route::post('/editblog/{id}', 'Controller@editBlog')->name('editBlog')->middleware(['auth', 'admin']);
-
-Route::get('/changeUserRole/{email}', 'Controller@changeUserRole')->name('changeUserRole')->middleware(['auth','admin']);
-
-Route::get('removeimage/{id}', 'Controller@removeImage')->name('removeImage')->middleware(['auth','admin']);
-Route::post('/addimage/{id}', 'Controller@addImage')->name('addImage')->middleware(['auth','admin']);
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth', 'admin']], function() {
+    Route::get('/blog', 'Controller@viewBlogs')->name('blog');
+    Route::view('/blog/add', 'addblog')->name('addBlogPage');
+    Route::post('/blog/add', 'Controller@addBlog')->name('addBlog');
+    
+    Route::get('/users', 'Controller@userPage')->name('users');
+    Route::patch('/users/{email}', 'Controller@changeUserRole')->name('changeUserRole');
+    Route::get('/removeblog/{id}', 'Controller@removeBlog')->name('removeBlog');
+    
+    Route::get('/blog/edit/{id}', 'Controller@indexEditBlog')->name('editBlogPage');
+    Route::post('/editblog/{id}', 'Controller@editBlog')->name('editBlog');
+    Route::post('/editblogname/{id}', 'Controller@editBlogName')->name('editBlogName');
+    
+    Route::get('/removeimage/{id}', 'Controller@removeImage')->name('removeImage');
+    Route::post('/addimage/{id}', 'Controller@addImage')->name('addImage');
+});

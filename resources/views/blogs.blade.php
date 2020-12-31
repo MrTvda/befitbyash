@@ -32,11 +32,11 @@
                   @if(optional($blogs->image)->img_source != null)
                     @if(optional($blogs->image)->img_place == 'float-right')
                     <div class="p-0 mb-3 ml-md-3 {{optional($blogs->image)->img_size}} {{optional($blogs->image)->img_place}}">
-                      <img class="w-100 rounded" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
+                      <img class="w-100 rounded shadow" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
                     </div>
                     @else
                     <div class="p-0 mb-3 mr-md-3 {{optional($blogs->image)->img_size}} {{optional($blogs->image)->img_place}}">
-                      <img class="w-100 rounded" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
+                      <img class="w-100 rounded shadow" src="img/blogs/{{optional($blogs->image)->img_source}}" alt="">
                     </div>
                     @endif
                   @endif
@@ -47,8 +47,8 @@
                     <p class="text-muted mb-0 font-italic">Datum: {{$blogs -> created_at -> format('d / m / Y')}}</p>
                   </div>
                   <div class="float-left">
-                    <a href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
-                    <a href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/BefitbyAsh/"><i class="fa fa-facebook-square mr-3 fa-2x text-dark"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/befitbyash/"><i class="fa fa-instagram fa-2x text-dark"></i></a>
                   </div>
                 </div>
               </div>

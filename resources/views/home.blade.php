@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                       <td>Users</td>
-                      <td><a href="{{route('users')}}" class="btn btn-primary float-right" style="">View</td>
+                      <td><a href="{{route('users')}}" class="btn btn-primary float-right">View</td>
                     </tr>
                   </table>
                 </div>
